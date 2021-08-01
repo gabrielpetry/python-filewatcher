@@ -42,10 +42,10 @@ class Conn:
         query = "DELETE FROM files WHERE file_path = ?"
         self.run_query(query, [file_path])
 
-    def get_all(self, order = 'id') -> list:
-        query = "SELECT * FROM files ORDER BY ?"
+    def get_all(self) -> list:
+        query = "SELECT * FROM files ORDER BY id DESC"
         self.get_cursor()
-        self.cur.execute(query, [order])
+        self.cur.execute(query)
         files = self.cur.fetchall()
         self.con.commit()
         self.con.close()
