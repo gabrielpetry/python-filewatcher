@@ -1,0 +1,4 @@
+*.sqlite
+venv
+.vscode
+__pycache__
